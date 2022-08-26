@@ -1,0 +1,18 @@
+# -*- mode: gitattributes; -*-
+VERSION export-subst
+git-hash export-subst
+
+# explict configure for gpg / asc so we can diff them
+*.gpg filter=gpg diff=gpg
+*.asc filter=gpg diff=gpg
+*.pub filter=gpg diff-gpg
+
+*.key filter=git-crypt diff=git-crypt
+secretdir/** filter=git-crypt diff=git-crypt
+
+# git archive ignore 
+/.github            export-ignore
+/.editorconfig      export-ignore
+/.gitattributes     export-ignore
+/.gitignore         export-ignore
+/test               export-ignore
